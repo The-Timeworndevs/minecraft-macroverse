@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "net.timeworndevs.macroverse.mixin.client",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"ExampleClientMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
