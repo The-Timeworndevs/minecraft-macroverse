@@ -19,7 +19,7 @@ import java.util.function.Function;
 
 public class MacroverseBlocks {
 
-public static Block register(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings, boolean shouldregister) {
+    public static Block register(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings, boolean shouldregister) {
 
         ResourceKey<Block> blockkey = keyOfBlock(name);
 
