@@ -2,6 +2,8 @@
   "itemGroup.macroverse.natural_blocks": "Macroverse Natural Blocks",
   "itemGroup.macroverse.building_blocks": "Macroverse Building Blocks",
 
+  "block.macroverse.umbral_soil": "Umbral Soil",
   "block.macroverse.shadeshale": "Shadeshale",
-  "block.macroverse.cobbled_shadeshale": "Cobbled Shadeshale"
+  "block.macroverse.cobbled_shadeshale": "Cobbled Shadeshale",
+  "block.macroverse.shadeshale_bricks": "Shadeshale Bricks"
 }

@@ -5,15 +5,15 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.ColorRGBA;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.ColoredFallingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.timeworndevs.macroverse.Main;
+import net.timeworndevs.macroverse.common.block.UmbralGrassBlock;
 
 import java.util.function.Function;
 
@@ -44,8 +44,12 @@ public static Block register(String name, Function<BlockBehaviour.Properties, Bl
         return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, name));
     }
 
-    public static final Block SHADESHALE = register("shadeshale", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE), true);
-    public static final Block COBBLED_SHADESHALE = register("cobbled_shadeshale", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE), true);
+    public static final Block UMBRAL_SOIL = register("umbral_soil", Block::new, BlockBehaviour.Properties.of().sound(SoundType.GRAVEL).mapColor(MapColor.COLOR_GRAY), true);
+    public static final Block UMBRAL_GRASS = register("umbral_grass", (properties) -> new UmbralGrassBlock(properties), BlockBehaviour.Properties.of().sound(SoundType.GRASS).mapColor(MapColor.TERRACOTTA_CYAN), true);
+    public static final Block SHADESHALE = register("shadeshale", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_BLACK), true);
+    public static final Block COBBLED_SHADESHALE = register("cobbled_shadeshale", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_BLACK), true);
+    public static final Block SHADESHALE_BRICKS = register("shadeshale_bricks", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_BLACK), true);
+
 
     public static void init() {
 

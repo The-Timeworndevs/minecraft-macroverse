@@ -1,0 +1,6 @@
+{
+    "pack":{
+        "pack_format":81,
+        "description":"This tells Spyglass to shut up about some annoying things, this file has no other purpose"
+    }
+}

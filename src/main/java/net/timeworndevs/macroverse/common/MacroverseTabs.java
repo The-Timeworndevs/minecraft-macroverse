@@ -23,11 +23,14 @@ public class MacroverseTabs {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, MV_BUILDING_BLOCKS_TAB_KEY, MV_BUILDING_BLOCKS_TAB);
 
         ItemGroupEvents.modifyEntriesEvent(MV_NATURAL_TAB_KEY).register((entries) -> {
+            entries.accept(MacroverseBlocks.UMBRAL_SOIL.asItem());
+            entries.accept(MacroverseBlocks.UMBRAL_GRASS.asItem());
             entries.accept(MacroverseBlocks.SHADESHALE.asItem());
         });
 
         ItemGroupEvents.modifyEntriesEvent(MV_BUILDING_BLOCKS_TAB_KEY).register((entries) -> {
-            entries.accept(MacroverseBlocks.COBBLED_SHADESHALE);
+            entries.accept(MacroverseBlocks.COBBLED_SHADESHALE.asItem());
+            entries.accept(MacroverseBlocks.SHADESHALE_BRICKS.asItem());
         });
     }
 }
