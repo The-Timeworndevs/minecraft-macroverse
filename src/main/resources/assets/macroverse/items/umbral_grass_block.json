@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "macroverse:block/umbral_grass"
+    "model": "macroverse:block/umbral_grass_block"
   }
 }

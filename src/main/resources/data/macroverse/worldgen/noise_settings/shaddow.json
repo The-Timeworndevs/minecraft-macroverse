@@ -385,7 +385,7 @@
   ],
   "surface_rule": {
     "type": "minecraft:sequence",
-    "sequence": [
+    "sequence": [      
       {
         "type": "minecraft:condition",
         "if_true": {
@@ -406,22 +406,23 @@
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:stone_depth",
-                  "offset": 4,
+                  "offset": 0,
                   "surface_type": "floor",
-                  "add_surface_depth": true,
-                  "secondary_depth_range": 6
+                  "add_surface_depth": false,
+                  "secondary_depth_range": 0
                 },
                 "then_run": {
                   "type": "minecraft:block",
                   "result_state": {
-                    "Name": "macroverse:umbral_soil"
+                    "Name": "macroverse:umbral_grass_block"
                   }
                 }
               }
             }
           ]
         }
-      },      {
+      },
+      {
         "type": "minecraft:condition",
         "if_true": {
           "type": "minecraft:above_preliminary_surface"
@@ -441,15 +442,15 @@
                 "type": "minecraft:condition",
                 "if_true": {
                   "type": "minecraft:stone_depth",
-                  "offset": 1,
+                  "offset": 0,
                   "surface_type": "floor",
                   "add_surface_depth": true,
-                  "secondary_depth_range": 6
+                  "secondary_depth_range": 0
                 },
                 "then_run": {
                   "type": "minecraft:block",
                   "result_state": {
-                    "Name": "macroverse:umbral_grass"
+                    "Name": "macroverse:umbral_soil"
                   }
                 }
               }
@@ -457,6 +458,7 @@
           ]
         }
       },
+
       {
         "type": "minecraft:condition",
         "if_true": {

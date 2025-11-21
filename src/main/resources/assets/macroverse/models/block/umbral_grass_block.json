@@ -2,7 +2,7 @@
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
     "bottom": "macroverse:block/umbral_soil",
-    "side": "macroverse:block/umbral_grass_side",
-    "top": "macroverse:block/umbral_grass_top"
+    "side": "macroverse:block/umbral_grass_block_side",
+    "top": "macroverse:block/umbral_grass_block_top"
   }
 }
