@@ -9,6 +9,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.GrassBlock;
+import net.minecraft.world.level.block.MyceliumBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -43,6 +45,7 @@ public class MacroverseBlocks {
     private static ResourceKey<Item> keyOfItem(String name) {
         return ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Main.MOD_ID, name));
     }
+
 
     public static final Block UMBRAL_SOIL = register("umbral_soil", Block::new, BlockBehaviour.Properties.of().sound(SoundType.GRAVEL).mapColor(MapColor.COLOR_GRAY), true);
     public static final Block UMBRAL_GRASS = register("umbral_grass", (properties) -> new UmbralGrassBlock(properties), BlockBehaviour.Properties.of().sound(SoundType.GRASS).mapColor(MapColor.TERRACOTTA_CYAN), true);

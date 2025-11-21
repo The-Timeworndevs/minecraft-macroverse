@@ -41,9 +41,14 @@ public abstract class SpreadingUmbralDirtBlock extends SnowyDirtBlock {
     }
 
     protected void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
+
+        System.out.println("Random tick logged");
+
         if (!canBeGrass(blockState, serverLevel, blockPos)) {
             serverLevel.setBlockAndUpdate(blockPos, MacroverseBlocks.UMBRAL_SOIL.defaultBlockState());
+            System.out.println("!canBeGrass logged");
         } else {
+            System.out.println("canBeGrass logged");
             if (serverLevel.getMaxLocalRawBrightness(blockPos.above())>= 0) {
                 BlockState blockState2 = this.defaultBlockState();
 
