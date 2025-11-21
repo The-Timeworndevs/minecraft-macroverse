@@ -48,7 +48,7 @@ public class MacroverseBlocks {
 
 
     public static final Block UMBRAL_SOIL = register("umbral_soil", Block::new, BlockBehaviour.Properties.of().sound(SoundType.GRAVEL).mapColor(MapColor.COLOR_GRAY), true);
-    public static final Block UMBRAL_GRASS = register("umbral_grass", (properties) -> new UmbralGrassBlock(properties), BlockBehaviour.Properties.of().sound(SoundType.GRASS).mapColor(MapColor.TERRACOTTA_CYAN), true);
+    public static final Block UMBRAL_GRASS = register("umbral_grass", (properties) -> new UmbralGrassBlock(properties), BlockBehaviour.Properties.of().sound(SoundType.GRASS).mapColor(MapColor.TERRACOTTA_CYAN).randomTicks(), true);
     public static final Block SHADESHALE = register("shadeshale", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_BLACK), true);
     public static final Block COBBLED_SHADESHALE = register("cobbled_shadeshale", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_BLACK), true);
     public static final Block SHADESHALE_BRICKS = register("shadeshale_bricks", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_BLACK), true);
