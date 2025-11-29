@@ -7,6 +7,9 @@
   "block.macroverse.shadeshale": "Shadeshale",
   "block.macroverse.cobbled_shadeshale": "Cobbled Shadeshale",
   "block.macroverse.shadeshale_bricks": "Shadeshale Bricks",
+  "block.macroverse.umberoak_log": "Umberoak Log",
+  "block.macroverse.umberoak_leaves": "Umberoak Leaves",
 
-  "biome.macroverse.umbral_plains": "Umbral Plains"
+  "biome.macroverse.umbral_plains": "Umbral Plains",
+  "biome.macroverse.shadow_forest": "Shadow Forest"
 }

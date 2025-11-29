@@ -399,7 +399,8 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
-                  "macroverse:umbral_plains"
+                  "macroverse:umbral_plains",
+                  "macroverse:shadow_forest"
                 ]
               },
               "then_run": {
@@ -412,9 +413,18 @@
                   "secondary_depth_range": 0
                 },
                 "then_run": {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "macroverse:umbral_grass_block"
+                  "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "water",
+                      "add_stone_depth": false,
+                      "offset": 0,
+                      "surface_depth_multiplier": 0
+                    },
+                    "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "macroverse:umbral_grass_block"
+                    }
                   }
                 }
               }

@@ -26,6 +26,8 @@ public class MacroverseTabs {
             entries.accept(MacroverseBlocks.UMBRAL_SOIL.asItem());
             entries.accept(MacroverseBlocks.UMBRAL_GRASS.asItem());
             entries.accept(MacroverseBlocks.SHADESHALE.asItem());
+            entries.accept(MacroverseBlocks.UMBEROAK_LOG.asItem());
+            entries.accept(MacroverseBlocks.UMBEROAK_LEAVES.asItem());
         });
 
         ItemGroupEvents.modifyEntriesEvent(MV_BUILDING_BLOCKS_TAB_KEY).register((entries) -> {
