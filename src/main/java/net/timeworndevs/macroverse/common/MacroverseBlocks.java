@@ -56,7 +56,7 @@ public class MacroverseBlocks {
     public static final Block COBBLED_SHADESHALE = register("cobbled_shadeshale", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_BLACK), true);
     public static final Block SHADESHALE_BRICKS = register("shadeshale_bricks", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_BLACK), true);
     public static final Block UMBEROAK_LOG = register("umberoak_log",(properties) -> new RotatedPillarBlock(properties), BlockBehaviour.Properties.of().sound(SoundType.WOOD).mapColor(MapColor.COLOR_BLACK), true);
-    public static final Block UMBEROAK_LEAVES = register("umberoak_leaves", (properties) -> new UntintedParticleLeavesBlock(0.01f,ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x1c3569) , properties), BlockBehaviour.Properties.of().sound(SoundType.GRASS).mapColor(MapColor.TERRACOTTA_CYAN).randomTicks(), true);
+    public static final Block UMBEROAK_LEAVES = register("umberoak_leaves", (properties) -> new UntintedParticleLeavesBlock(0.01f,ColorParticleOption.create(ParticleTypes.TINTED_LEAVES, 0x1c3569) , properties), BlockBehaviour.Properties.of().sound(SoundType.GRASS).mapColor(MapColor.TERRACOTTA_CYAN).noOcclusion().randomTicks(), true);
 
 
     public static void init() {

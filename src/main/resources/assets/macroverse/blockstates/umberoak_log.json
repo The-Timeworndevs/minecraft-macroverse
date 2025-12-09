@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "macroverse:block/umberoak_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "macroverse:block/umberoak_log"
+    },
+    "axis=z": {
+      "model": "macroverse:block/umberoak_log_horizontal",
+      "x": 90
+    }
+  }
+}
