@@ -18,9 +18,9 @@ import java.util.function.Function;
 
 public class MacroverseBlocks {
 
-    public static final Block SHADESHALE = registerBlock("shadeshale", properties -> new Block(properties.mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops()));
-    public static final Block SHADESOIL = registerBlock("shadesoil", properties ->  new Block(properties.mapColor(MapColor.TERRACOTTA_CYAN).sound(SoundType.GRAVEL)));
-    public static final Block UMBRAL_GRASS_BLOCK = registerBlock("umbral_grass_block", properties -> new UmbralGrassBlock(properties.mapColor(MapColor.LAPIS).sound(SoundType.GRASS).randomTicks()));
+    public static final Block SHADESHALE = registerBlock("shadeshale", properties -> new Block(properties.mapColor(MapColor.COLOR_GRAY).strength(1.5F, 6.0F).requiresCorrectToolForDrops()));
+    public static final Block SHADESOIL = registerBlock("shadesoil", properties ->  new Block(properties.mapColor(MapColor.TERRACOTTA_CYAN).sound(SoundType.GRAVEL).strength(0.5F)));
+    public static final Block UMBRAL_GRASS_BLOCK = registerBlock("umbral_grass_block", properties -> new UmbralGrassBlock(properties.mapColor(MapColor.LAPIS).sound(SoundType.GRASS).randomTicks().strength(0.6F)));
 
     private static Block registerBlockWithoutBlockItem(String name, Function<BlockBehaviour.Properties, Block> function) {
         Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Main.MOD_ID, name))));

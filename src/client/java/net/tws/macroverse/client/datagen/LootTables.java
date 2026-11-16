@@ -8,7 +8,7 @@ public class LootTables {
 
     static final Block[] DROPS_SELF = new Block[] {
 
-            SHADESHALE,
+            //SHADESHALE,
             SHADESOIL
 
     };

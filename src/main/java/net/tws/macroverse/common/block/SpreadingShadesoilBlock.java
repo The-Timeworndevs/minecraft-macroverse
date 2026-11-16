@@ -2,52 +2,68 @@ package net.tws.macroverse.common.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SnowLayerBlock;
 import net.minecraft.world.level.block.SnowyBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.lighting.LightEngine;
 import net.tws.macroverse.common.init.MacroverseBlocks;
 
+import java.util.Optional;
+
 public abstract class SpreadingShadesoilBlock extends SnowyBlock {
+    private final ResourceKey<Block> baseBlock;
 
-    protected SpreadingShadesoilBlock(Properties properties) {
+    protected SpreadingShadesoilBlock(final BlockBehaviour.Properties properties, final ResourceKey<Block> baseBlock) {
         super(properties);
+        this.baseBlock = baseBlock;
     }
 
-    private static boolean canBeGrass(BlockState blockState, LevelReader levelReader, BlockPos blockPos) {
-        BlockPos blockPos2 = blockPos.above();
-        BlockState blockState2 = levelReader.getBlockState(blockPos2);
-        if (blockState2.is(Blocks.SNOW) && (Integer) blockState2.getValue(SnowLayerBlock.LAYERS) == 1) {
+    private static boolean canStayAlive(final BlockState state, final LevelReader level, final BlockPos pos) {
+        BlockPos above = pos.above();
+        BlockState aboveState = level.getBlockState(above);
+        if (aboveState.is(Blocks.SNOW) && aboveState.getValue(SnowLayerBlock.LAYERS) == 1) {
             return true;
-        } else if (blockState2.getFluidState().getAmount() == 8) {
-            return false;
-        } else {
-            int i = LightEngine.getLightDampeningInto(blockState, blockState2, Direction.UP, blockState.getLightDampening());
-            return i < 15;
         }
+
+        if (aboveState.getFluidState().isFull()) {
+            return false;
+        }
+
+        int lightDampeningTopFace = LightEngine.getLightDampeningInto(state, aboveState, Direction.UP, aboveState.getLightDampening());
+        return lightDampeningTopFace < 15;
     }
-    private static boolean canPropagate(BlockState blockState, LevelReader levelReader, BlockPos blockPos) {
-        BlockPos blockPos2 = blockPos.above();
-        return canBeGrass(blockState, levelReader, blockPos) && !levelReader.getFluidState(blockPos2).is(FluidTags.WATER);
+
+    private static boolean canPropagate(final BlockState state, final LevelReader level, final BlockPos pos) {
+        BlockPos above = pos.above();
+        return canStayAlive(state, level, pos) && !level.getFluidState(above).is(FluidTags.WATER);
     }
 
-    protected void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
+    @Override
+    protected void randomTick(final BlockState state, final ServerLevel level, final BlockPos pos, final RandomSource random) {
+        Registry<Block> blocks = level.registryAccess().lookupOrThrow(Registries.BLOCK);
+        Optional<Block> baseBlock = blocks.getOptional(this.baseBlock);
+        if (!baseBlock.isEmpty()) {
+            if (!canStayAlive(state, level, pos)) {
+                level.setBlockAndUpdate(pos, baseBlock.get().defaultBlockState());
+            } else {
+                if (level.getMaxLocalRawBrightness(pos.above()) >= 9) {
+                    BlockState defaultBlockState = this.defaultBlockState();
 
-        if (!canBeGrass(blockState, serverLevel, blockPos)) {
-            serverLevel.setBlockAndUpdate(blockPos, MacroverseBlocks.SHADESOIL.defaultBlockState());
-        } else {
-            if (serverLevel.getMaxLocalRawBrightness(blockPos.above())>= 0) {
-                BlockState blockState2 = this.defaultBlockState();
-
-                for (int i = 0; i < 4; ++i) {
-                    BlockPos blockPos2 = blockPos.offset(randomSource.nextInt(3) -1, randomSource.nextInt(5) - 3, randomSource.nextInt(3) -1);
-                    if (serverLevel.getBlockState(blockPos2).is(MacroverseBlocks.SHADESOIL) && canPropagate(blockState2, serverLevel, blockPos2)) {
-                        serverLevel.setBlockAndUpdate(blockPos2, (BlockState) blockState2.setValue(SNOWY, isSnowySetting(serverLevel.getBlockState(blockPos2.above()))));
+                    for (int i = 0; i < 4; i++) {
+                        BlockPos testPos = pos.offset(random.nextInt(3) - 1, random.nextInt(5) - 3, random.nextInt(3) - 1);
+                        if (level.getBlockState(testPos).is(baseBlock.get()) && canPropagate(defaultBlockState, level, testPos)) {
+                            level.setBlockAndUpdate(testPos, defaultBlockState.setValue(SNOWY, isSnowySetting(level.getBlockState(testPos.above()))));
+                        }
                     }
                 }
             }

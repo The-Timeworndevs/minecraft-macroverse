@@ -16,6 +16,7 @@ import static net.minecraft.client.data.models.model.TextureMapping.getBlockText
 import static net.minecraft.client.data.models.model.TexturedModel.createDefault;
 
 import static net.tws.macroverse.client.datagen.Models.*;
+import static net.tws.macroverse.common.init.MacroverseBlocks.*;
 
 public class ModelProvider extends FabricModelProvider {
     public ModelProvider(FabricPackOutput output) {
