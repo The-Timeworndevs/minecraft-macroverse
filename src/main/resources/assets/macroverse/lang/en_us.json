@@ -1,7 +1,17 @@
 {
   "block.macroverse.shadeshale": "Shadeshale",
+  "block.macroverse.cobbled_shadeshale": "Cobbled Shadeshale",
+  "block.macroverse.shadeshale_bricks": "Shadeshale Bricks",
   "block.macroverse.shadesoil": "Shadesoil",
   "block.macroverse.umbral_grass_block": "Umbral Grass Block",
+  "block.macroverse.short_umbral_grass": "Short Umbral Grass",
 
-  "itemGroup.macroverse.macroverse_building_blocks": "Macroverse Building Blocks"
+  "block.macroverse.umberoak_log": "Umberoak Log",
+  "block.macroverse.stripped_umberoak_log": "Stripped Umberoak Log",
+  "block.macroverse.umberoak_wood": "Umberoak Wood",
+  "block.macroverse.stripped_umberoak_wood": "Stripped Umberoak Wood",
+  "block.macroverse.umberoak_leaves": "Umberoak Leaves",
+  "block.macroverse.umberoak_planks": "Umberoak Planks",
+
+  "itemGroup.macroverse.shaddow": "Macroverse Dimension: Shaddow"
 }

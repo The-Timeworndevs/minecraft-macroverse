@@ -8,8 +8,14 @@ public class LootTables {
 
     static final Block[] DROPS_SELF = new Block[] {
 
-            //SHADESHALE,
-            SHADESOIL
+            COBBLED_SHADESHALE,
+            SHADESHALE_BRICKS,
+            SHADESOIL,
+            UMBEROAK_LOG,
+            UMBEROAK_WOOD,
+            STRIPPED_UMBEROAK_LOG,
+            STRIPPED_UMBEROAK_WOOD,
+            UMBEROAK_PLANKS
 
     };
 

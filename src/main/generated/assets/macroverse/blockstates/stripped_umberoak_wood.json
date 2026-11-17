@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "macroverse:block/stripped_umberoak_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "macroverse:block/stripped_umberoak_wood"
+    },
+    "axis=z": {
+      "model": "macroverse:block/stripped_umberoak_wood",
+      "x": 90
+    }
+  }
+}

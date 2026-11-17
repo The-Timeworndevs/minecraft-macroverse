@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "macroverse:block/stripped_umberoak_log_x"
+    },
+    "axis=y": {
+      "model": "macroverse:block/stripped_umberoak_log_y"
+    },
+    "axis=z": {
+      "model": "macroverse:block/stripped_umberoak_log_z"
+    }
+  }
+}

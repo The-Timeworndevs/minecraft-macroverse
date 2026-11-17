@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "macroverse:block/short_umbral_grass"
+  }
+}

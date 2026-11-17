@@ -56,7 +56,7 @@ public abstract class SpreadingShadesoilBlock extends SnowyBlock {
             if (!canStayAlive(state, level, pos)) {
                 level.setBlockAndUpdate(pos, baseBlock.get().defaultBlockState());
             } else {
-                if (level.getMaxLocalRawBrightness(pos.above()) >= 9) {
+                if (level.getMaxLocalRawBrightness(pos.above()) >= 0) {
                     BlockState defaultBlockState = this.defaultBlockState();
 
                     for (int i = 0; i < 4; i++) {

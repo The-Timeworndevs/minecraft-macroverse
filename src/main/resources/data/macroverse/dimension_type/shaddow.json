@@ -10,7 +10,11 @@
       "modifier": "minimum",
       "argument": 1
     },
-    "minecraft:visual/ambient_light_color": "#090909"
+    "minecraft:visual/fog_end_distance": 96,
+    "minecraft:visual/fog_start_distance": 10,
+    "minecraft:visual/ambient_light_color": "#090909",
+    "minecraft:visual/sky_light_color": "#090909",
+    "minecraft:visual/sky_light_factor": 0
   },
   "timelines": "#minecraft:in_nether",
   "has_skylight": false,

@@ -1,2 +1,9 @@
 // 26.3	-999999999-01-01T00:00:00	Minecraft Macroverse/Block Loot Tables
+2179ee3c5dae2cc68fadf6a9c101347fa1cc8d20 data/macroverse/loot_table/blocks/cobbled_shadeshale.json
+9885b595dbd6352e2522c56912f6468a192f19dd data/macroverse/loot_table/blocks/shadeshale_bricks.json
 bfbd5033bc382b011e69d5ca0f12f3d3420bbff5 data/macroverse/loot_table/blocks/shadesoil.json
+19b88764855985eb273972ad8f8312da2647e9a6 data/macroverse/loot_table/blocks/stripped_umberoak_log.json
+9b42cc4919aa8a69d4926237ee1cd4990d8da32e data/macroverse/loot_table/blocks/stripped_umberoak_wood.json
+1de9a5bf2a8b969b22a1d0915e366b7cc1a76aa1 data/macroverse/loot_table/blocks/umberoak_log.json
+672db4d3e329865e1975304da97e7c24225953c7 data/macroverse/loot_table/blocks/umberoak_planks.json
+369e08bbfcd9e46badd995d04f9c9adf4342c1ad data/macroverse/loot_table/blocks/umberoak_wood.json

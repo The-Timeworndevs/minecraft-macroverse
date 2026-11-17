@@ -12,16 +12,25 @@ import net.tws.macroverse.Main;
 
 public class MacroverseTabs {
 
-    public static final ResourceKey<CreativeModeTab> MACROVERSE_BUILDING_BLOCKS_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(Main.MOD_ID, "macroverse_building_blocks"));
-    public static final CreativeModeTab MACROVERSE_BUILDING_BLOCKS = FabricCreativeModeTab.builder().icon(() -> new ItemStack(MacroverseBlocks.SHADESHALE)).title(Component.translatable("itemGroup.macroverse.macroverse_building_blocks")).displayItems(((parameters, output) -> {
+    public static final ResourceKey<CreativeModeTab> SHADDOW_TAB_KEY = ResourceKey.create(BuiltInRegistries.CREATIVE_MODE_TAB.key(), Identifier.fromNamespaceAndPath(Main.MOD_ID, "shaddow"));
+    public static final CreativeModeTab SHADDOW_TAB = FabricCreativeModeTab.builder().icon(() -> new ItemStack(MacroverseBlocks.SHADESHALE)).title(Component.translatable("itemGroup.macroverse.shaddow")).displayItems(((parameters, output) -> {
         output.accept(MacroverseBlocks.SHADESHALE);
+        output.accept(MacroverseBlocks.COBBLED_SHADESHALE);
+        output.accept(MacroverseBlocks.SHADESHALE_BRICKS);
         output.accept(MacroverseBlocks.SHADESOIL);
         output.accept(MacroverseBlocks.UMBRAL_GRASS_BLOCK);
+        output.accept(MacroverseBlocks.SHORT_UMBRAL_GRASS);
+        output.accept(MacroverseBlocks.UMBEROAK_LOG);
+        output.accept(MacroverseBlocks.STRIPPED_UMBEROAK_LOG);
+        output.accept(MacroverseBlocks.UMBEROAK_WOOD);
+        output.accept(MacroverseBlocks.STRIPPED_UMBEROAK_WOOD);
+        output.accept(MacroverseBlocks.UMBEROAK_LEAVES);
+        output.accept(MacroverseBlocks.UMBEROAK_PLANKS);
     })).build();
 
     public static void init() {
 
-        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, MACROVERSE_BUILDING_BLOCKS_KEY, MACROVERSE_BUILDING_BLOCKS);
+        Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, SHADDOW_TAB_KEY, SHADDOW_TAB);
 
         Main.LOGGER.info("Creative Item Tabs Registry Successful");
     }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "macroverse:block/stripped_umberoak_log",
+    "side": "macroverse:block/stripped_umberoak_log"
+  }
+}

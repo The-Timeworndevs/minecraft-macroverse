@@ -1,7 +1,12 @@
 {
+  "type": "minecraft:condition",
+  "if_true": {
+    "type": "minecraft:above_preliminary_surface"
+  },
+  "then_run": {
     "type": "minecraft:sequence",
     "sequence": [
-        {
+      {
         "type": "minecraft:condition",
         "if_true": {
           "type": "minecraft:above_preliminary_surface"
@@ -12,7 +17,10 @@
             {
               "type": "minecraft:condition",
               "if_true": {
-                "type": "minecraft:above_preliminary_surface"
+                "type": "minecraft:biome",
+                "biome_is": [
+                  "macroverse:umbral_plains"
+                ]
               },
               "then_run": {
                 "type": "minecraft:sequence",
@@ -20,26 +28,38 @@
                   {
                     "type": "minecraft:condition",
                     "if_true": {
-                      "type": "minecraft:biome",
-                      "biome_is": [
-                        "macroverse:umbral_plains"
-                      ]
+                      "type": "minecraft:stone_depth",
+                      "offset": 0,
+                      "surface_type": "floor",
+                      "add_surface_depth": false,
+                      "secondary_depth_range": 1
                     },
                     "then_run": {
                       "type": "minecraft:condition",
                       "if_true": {
-                        "type": "minecraft:stone_depth",
-                        "offset": 3,
-                        "surface_type": "floor",
-                        "add_surface_depth": true,
-                        "secondary_depth_range": 3
+                        "type": "water",
+                        "add_stone_depth": false,
+                        "offset": 0,
+                        "surface_depth_multiplier": 0
                       },
                       "then_run": {
                         "type": "minecraft:block",
-                        "result_state": {
-                          "id": "macroverse:shadesoil"
-                        }
+                        "result_state": "macroverse:umbral_grass_block"
                       }
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "offset": 0,
+                      "surface_type": "floor",
+                      "add_surface_depth": true,
+                      "secondary_depth_range": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": "macroverse:shadesoil"
                     }
                   }
                 ]
@@ -49,4 +69,5 @@
         }
       }
     ]
+  }
 }

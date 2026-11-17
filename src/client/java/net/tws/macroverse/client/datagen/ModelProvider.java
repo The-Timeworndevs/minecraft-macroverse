@@ -44,6 +44,11 @@ public class ModelProvider extends FabricModelProvider {
             blockModelGenerators.createTrivialCube(block);
         }
 
+        blockModelGenerators.createRotatedVariantBlock(SHADESOIL);
+
+        blockModelGenerators.createCrossBlockWithDefaultItem(SHORT_UMBRAL_GRASS, BlockModelGenerators.PlantType.NOT_TINTED);
+        blockModelGenerators.woodProvider(UMBEROAK_LOG).logUVLocked(UMBEROAK_LOG).wood(UMBEROAK_WOOD);
+        blockModelGenerators.woodProvider(STRIPPED_UMBEROAK_LOG).logUVLocked(STRIPPED_UMBEROAK_LOG).wood(STRIPPED_UMBEROAK_WOOD);
     }
 
     @Override

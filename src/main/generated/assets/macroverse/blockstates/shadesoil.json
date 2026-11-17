@@ -1,7 +1,21 @@
 {
   "variants": {
-    "": {
-      "model": "macroverse:block/shadesoil"
-    }
+    "": [
+      {
+        "model": "macroverse:block/shadesoil"
+      },
+      {
+        "model": "macroverse:block/shadesoil",
+        "y": 90
+      },
+      {
+        "model": "macroverse:block/shadesoil",
+        "y": 180
+      },
+      {
+        "model": "macroverse:block/shadesoil",
+        "y": 270
+      }
+    ]
   }
 }

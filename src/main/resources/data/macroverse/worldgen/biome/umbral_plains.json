@@ -1,7 +1,8 @@
 {
   "attributes": {
     "minecraft:visual/sky_color": "#000000",
-    "minecraft:visual/fog_color": "#000000"
+    "minecraft:visual/fog_color": "#000000",
+    "minecraft:visual/water_fog_color": "#060607"
   },
   "carvers": [
     "minecraft:cave",
@@ -10,27 +11,22 @@
   ],
   "downfall": 0.4,
   "effects": {
-    "water_color": "#3f76e4"
+    "water_color": "#19191e"
   },
   "features": [
     [],
-    [
-    ],
-    [
-    ],
-    [
-    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
     [],
     [],
     [
+      "macroverse:patch_umbral_grass_plain"
     ],
-    [],
-    [
-    ],
-    [
-    ],
-    [
-    ]
+    []
   ],
   "has_precipitation": false,
   "temperature": 0.8
